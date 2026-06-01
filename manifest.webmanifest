@@ -1,0 +1,24 @@
+{
+  "name": "Port Search",
+  "short_name": "Port Search",
+  "description": "Fast lookup for ports and airports by code, name, city or country.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#B71C1C",
+  "theme_color": "#B71C1C",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
