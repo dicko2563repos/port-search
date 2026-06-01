@@ -15,12 +15,20 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--content-bg);
   color: var(--text-body);
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* ---------- App bar ---------- */
@@ -35,6 +43,7 @@ body {
   min-height: 56px;
   flex-wrap: wrap;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .app-bar-title {
@@ -54,13 +63,22 @@ body {
 
 /* ---------- Layout ---------- */
 main {
-  padding: 0 0 24px;
+  padding: 0;
   max-width: 720px;
+  width: 100%;
   margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .screen {
   padding: 0 10px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .screen.hidden {
@@ -77,14 +95,12 @@ main {
 
 /* ---------- Search toolbar ---------- */
 .search-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   background: var(--content-bg);
   padding: 12px 10px 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .search-input {
@@ -110,13 +126,29 @@ main {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 
 .results-list {
-  padding: 8px 0 0;
+  padding: 8px 0 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* ---------- Code legend (pinned key above the list) ---------- */
+.legend-card {
+  flex-shrink: 0;
+  margin: 8px 0 4px;
+}
+
+.legend-card .port-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-body);
 }
 
 .port-card {
