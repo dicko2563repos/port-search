@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Port Search</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#B71C1C">
+</head>
+<body>
+  <header class="app-bar">
+    <div class="app-bar-left">
+      <h1 class="app-bar-title">Port Search</h1>
+    </div>
+    <span class="app-bar-pill" id="portCountPill"></span>
+  </header>
+
+  <main>
+    <section id="searchScreen" class="screen">
+      <div class="search-toolbar">
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search by port name, code or country…"
+          autocomplete="off"
+          enterkeyhint="search"
+          aria-label="Search ports"
+        />
+        <div id="regionChips" class="filter-chips" role="group" aria-label="Filter by region"></div>
+      </div>
+
+      <p class="results-meta" id="resultsMeta" aria-live="polite"></p>
+      <div id="resultsList" class="results-list"></div>
+    </section>
+  </main>
+
+  <script src="ports-data.js"></script>
+  <script src="airports-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
