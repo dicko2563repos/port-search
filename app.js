@@ -5,37 +5,13 @@
   var PORTS = Array.isArray(window.PORTS) ? window.PORTS : [];
 
   var searchInput = document.getElementById("searchInput");
-  var regionChips = document.getElementById("regionChips");
   var resultsList = document.getElementById("resultsList");
   var resultsMeta = document.getElementById("resultsMeta");
   var portCountPill = document.getElementById("portCountPill");
 
   var MAX_RESULTS = 100;
-  var activeRegion = "All";
 
   portCountPill.textContent = PORTS.length + " locations";
-
-  // ---------- Region filter chips ----------
-  function buildRegionChips() {
-    var regions = ["All"].concat(
-      Array.from(new Set(PORTS.map(function (p) { return p.region; }))).sort()
-    );
-    regionChips.innerHTML = "";
-    regions.forEach(function (region) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "filter-chip" + (region === activeRegion ? " active" : "");
-      btn.textContent = region;
-      btn.addEventListener("click", function () {
-        activeRegion = region;
-        Array.prototype.forEach.call(regionChips.children, function (c) {
-          c.classList.toggle("active", c.textContent === activeRegion);
-        });
-        render();
-      });
-      regionChips.appendChild(btn);
-    });
-  }
 
   // ---------- Search ----------
   function getTokens(query) {
@@ -58,7 +34,6 @@
   function filterPorts() {
     var tokens = getTokens(searchInput.value);
     return PORTS.filter(function (p) {
-      if (activeRegion !== "All" && p.region !== activeRegion) return false;
       return matchesPort(p, tokens);
     });
   }
@@ -133,6 +108,5 @@
 
   // ---------- Init ----------
   searchInput.addEventListener("input", render);
-  buildRegionChips();
   render();
 })();

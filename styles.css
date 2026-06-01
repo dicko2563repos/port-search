@@ -102,39 +102,6 @@ main {
   border-color: var(--header-red);
 }
 
-/* Filter chips (region / type) */
-.filter-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.filter-chip {
-  font-size: 12px;
-  font-family: inherit;
-  font-weight: 500;
-  padding: 4px 12px;
-  border-radius: 14px;
-  border: 1.5px solid #bbb;
-  background: var(--card-bg);
-  color: var(--accent-grey);
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-  white-space: nowrap;
-}
-
-.filter-chip.active {
-  background: var(--header-red);
-  border-color: var(--header-red);
-  color: #fff;
-  font-weight: 600;
-}
-
-.filter-chip:not(.active):hover {
-  border-color: var(--accent-grey);
-  color: var(--text-body);
-}
-
 /* ---------- Results ---------- */
 .results-meta {
   padding: 4px 6px 0;
