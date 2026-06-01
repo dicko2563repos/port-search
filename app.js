@@ -11,7 +11,7 @@
 
   var MAX_RESULTS = 100;
 
-  portCountPill.textContent = PORTS.length + " locations";
+  portCountPill.textContent = PORTS.length.toLocaleString() + " airports";
 
   // ---------- Search ----------
   function getTokens(query) {
@@ -64,7 +64,7 @@
     if (!matches.length) {
       resultsMeta.textContent = "";
       resultsList.innerHTML =
-        '<p class="results-empty">No ports match your search.</p>';
+        '<p class="results-empty">No airports match your search.</p>';
       return;
     }
 

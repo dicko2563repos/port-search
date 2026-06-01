@@ -2,3 +2,7 @@
 node_modules/
 package.json
 package-lock.json
+
+# Data-generation source files (downloaded; not part of the static site)
+airports.csv
+countries.csv
